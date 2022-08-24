@@ -1,0 +1,44 @@
+GET http://localhost:8000?nama=Diory
+
+###
+GET http://localhost:8000/users
+
+###
+POST http://localhost:8000/register
+Content-Type: application/json
+
+{
+    "nama":"Diory Pribadi Sinaga",
+    "email":"diory@gmail.com",
+    "password":"124",
+    "confpassword":"124"
+}
+
+###
+Put http://localhost:8000/update?email=diordy@gmail.com
+Content-Type: application/json
+
+{
+    "nama":"Sinaga Diory",
+    "email":"diordy@gmail.com",
+    "password":"124"
+}
+
+###
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+    "email":"diordy@gmail.com",
+    "password":"124"
+}
+
+###
+POST http://localhost:8000/post
+Content-Type: application/json
+
+{
+    "nama_mobil":"Xenia",
+    "harga":"120000",
+    "avaibel":true
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpressSederhana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        li{
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <form  action="/post" method="post" class="mb-3" enctype="multipart/form-data">
+                        <h2 class="mb-3">Add Car</h2>
+                        <label class="mb-2" for="nama_mobil">Nama Mobil</label>
+                        <input name="nama_mobil" type="text" class="form-control" id="nama_mobil" required> 
+                        <label class="mb-2" for="harga_mobil">Harga Mobil</label>
+                        <input name="harga" type="number" class="form-control" id="harga_mobil" required>
+                        <label class="mb-2" for="foto_mobil">Harga Mobil</label>
+                        <input name="foto" type="file" class="form-control" id="foto_mobil" required>
+                        <button class="btn mt-2 btn-primary">Add</button>
+                    </form>
+                    <h5 style="display:inline ">Ingin Menambahkan Data Users?</h5>
+                    <a href="/" class="btn btn-outline-success mx-4">Add Users</a>
+                </div>
+                <div class="col-lg-6 align-self-center">
+                    <% if (cars.length==0) { %>
+                        <h3 style="text-align: center;">Data Cars Masih Kosong</h3>
+                    <% } %>
+                    <% cars.forEach(mobil => { %>
+                        <h5><%= mobil.id %>. <%= mobil.nama_mobil %> </h5>
+                        <ul>
+                            <li>Harga: <%= mobil.harga %> </li>
+                            <label for="">Foto</label><li style="text-align: center;"> <img width="40%" src="<%= mobil.foto %>" alt="foto"></li>
+                        </ul>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer style="background-color: #d7d7db; position:fixed;
+    bottom:0;width: 100%;" class="mt-5 p-4">
+        <div style="text-align: center;">
+            Copyright 2022 Diory Pribadi Sinaga
+        </div>
+    </footer>
+</body>
+</html>
